@@ -1,0 +1,9 @@
+﻿  main.cpp
+E:\code\school cpp\Gomoku\Gomoku\main.cpp(9,17): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+E:\code\school cpp\Gomoku\Gomoku\main.cpp(205,17): warning C4302: '<function-style-cast>': truncation from 'const char *' to 'char'
+E:\code\school cpp\Gomoku\Gomoku\main.cpp(409,18): warning C4244: 'return': conversion from 'double' to 'int', possible loss of data
+  Generating code
+  Previous IPDB not found, fall back to full compilation.
+  All 268 functions were compiled because no usable IPDB/IOBJ from previous compilation was found.
+  Finished generating code
+  Gomoku.vcxproj -> E:\code\school cpp\Gomoku\x64\Release\Gomoku.exe
