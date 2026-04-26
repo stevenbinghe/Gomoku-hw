@@ -295,31 +295,30 @@ public:
 			if (player == BLACK)
 			{
 				count += CountPattern(line, "011110");
+				count += CountPattern(line, "0101110");
+				count += CountPattern(line, "0111010");
+				count += CountPattern(line, "0110110");
+
+
 			}
 			else
 			{
 				count += CountPattern(line, "022220");
+				count += CountPattern(line, "0202220");
+				count += CountPattern(line, "0222020");
+				count += CountPattern(line, "0220220");
+
 			}
 		}
 		return count;
 	}
-	static bool IsLiveFour(const Board& board, const Piece& piece,const Piece& dir_piece,int player)
+	static bool IsLiveFour(const Board& board, const Piece& piece,int player)
 	{
-		std::string line = GetLineString(board, piece, dir_piece);
-		if (player == BLACK)
-		{
-			if (CountPattern(line, "011110") > 0)
-				return true;
-			else
-				return false;
-		}
+		if (CountLiveFour(board,piece,player)> 0)
+			return true;
 		else
-		{
-			if (CountPattern(line, "022220") > 0)
-				return true;
-			else
-				return false;
-		}
+			return false;
+		
 	}
 	static int CountLiveThree(Board& board, const Piece& piece,int player)
 	{
@@ -335,7 +334,7 @@ public:
 					continue;
 				
 				board.MakeMove(next_piece, player);
-				if (IsLiveFour(board, next_piece, dir_piece[d], player))
+				if (IsLiveFour(board, next_piece, player))
 				{
 					board.undoMove();
 					founded = true;
@@ -1027,6 +1026,7 @@ public:
 			else
 			{
 				move = AIMove(board, humanplayer);
+				std::cout << move << std::endl;
 			}
 			
 			if (WIN(board, move))
